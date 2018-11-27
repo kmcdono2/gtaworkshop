@@ -144,13 +144,18 @@ In this case, `-i` specifies input directory and `-o` the output directory.
 
 ### Run EG
 
-Let's run EG on
+Let's run EG on Darwin's *The Origin of Species*
+Download the `origins.txt` file from the repo and put it in your `in` directory.
 
 #### Mac users
 Be sure you've navigated to the scripts directory:
 `cd scripts`
 Then run the following (your output directory must already exist, e.g. `out`):
-`cat ../in/origin.txt | ./run -t plain -g unlock -o ../out origin`
+`cat ../in/origin.txt | ./run -t plain -g geonames -o ../out origin`
+
+#### Windows users
+Run:
+`cat origin.txt | docker run -i -v $(pwd):/out kmcdono2/eg:latest ./run -t plain -g geonames -o /out origin`
 
 
 ### Evaluating your output
