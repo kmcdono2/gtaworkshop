@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div1 n="5228" id="7:429" vol="1">
+  <index type="head" value="AZIRUTH" />
+  <index type="objecttype" value="artm" />
+  <index type="author" value="Diderot" />
+  <index type="shortauth" value="Diderot" />
+  <index type="kafnum" value="39" />
+  <index type="kafauth" value="Diderot, Denis (1713-1784)" />
+  <index type="attribution" value="signed" />
+  <index type="class" value="Geographie." />
+  <index type="normclass" value="Géographie" />
+  <index type="englishclass" value="Geography" />
+  <index type="generatedclass" value="Géographie" />
+  <index type="pos" value="NA" />
+  <head>AZIRUTH</head>
+  <p>
+    <s>
+      <rs>
+        <name>
+          <w type="NPr" lemma="" xml:id="w1">AZIRUTH</w>
+        </name>
+      </rs>
+      <term type="articleClass">(<w lemma="géographie" type="N" xml:id="w2">Géographie</w>.)</term>
+      <rs type="ene">
+        <rs subtype="ene">
+          <term type="place">
+            <w lemma="petit" type="A" xml:id="w3">petite</w>
+            <w lemma="ville" type="N" xml:id="w4">ville</w>
+          </term>
+          <w lemma="de" type="PREP" xml:id="w5">d'</w>
+          <rs type="place" xml:id="rs.0">
+            <name>
+              <w type="NPr" lemma="" xml:id="w6">Egypte</w>
+            </name>
+          <location><geo source="http://www.geonames.org/5947128/">45.53897 -72.71333</geo><geo source="http://www.geonames.org/357994/">27.0 30.0</geo><geo source="http://www.geonames.org/8378475/">31.19518 29.90976</geo><geo source="http://www.geonames.org/2756296/">52.96896 6.16526</geo><geo source="http://www.geonames.org/5928496/">45.53618 -72.72223</geo></location></rs>
+        </rs>
+      </rs> ,<w lemma="sur" type="PREP" xml:id="w7">sur</w>
+      <w lemma="la" type="DET" xml:id="w8">la</w>
+      <w lemma="côte" type="N" xml:id="w9">côte</w>
+      <term subtype="orientation">
+        <w lemma="occidental" type="A" xml:id="w10">occidentale</w>
+        <w lemma="de" type="PREP" xml:id="w11">de</w>
+      </term>
+      <rs type="ene">
+        <rs subtype="ene" type="place" xml:id="rs.1">
+          <w lemma="la" type="DET" xml:id="w12">la</w>
+          <term type="place">
+            <w lemma="mer" type="N" xml:id="w13">mer</w>
+          </term>
+          <rs type="place" xml:id="rs.2">
+            <name>
+              <w lemma="Rouge" type="NPr" xml:id="w14">Rouge</w>
+            </name>
+          <location><geo source="http://www.geonames.org/4315588/">30.45075 -91.15455</geo><geo source="http://www.geonames.org/2982615/">47.78367 -1.44763</geo><geo source="http://www.geonames.org/11351522/">14.00602 -60.9895</geo><geo source="http://www.geonames.org/3570423/">14.7761 -61.13564</geo><geo source="http://www.geonames.org/6454154/">47.78278 -1.44833</geo></location></rs>
+        <location><geo source="http://www.geonames.org/2994321/">46.70707 1.16506</geo></location></rs>
+      </rs> ;<w lemma="ce" type="PRO" xml:id="w15">ce</w>
+      <w lemma="ne" type="ADV" xml:id="w16">n'</w>
+      <w lemma="être" type="V" xml:id="w17">est</w>
+      <w lemma="presque" type="ADV" xml:id="w18">presque</w>
+      <w lemma="plus" type="ADV" xml:id="w19">plus</w>
+      <w lemma="que" type="CONJC" xml:id="w20">qu'</w>
+      <w lemma="un" type="DET" xml:id="w21">un</w>
+      <w lemma="village" type="N" xml:id="w22">village</w> .</s>
+  </p>
+</div1>
