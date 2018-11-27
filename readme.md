@@ -54,7 +54,7 @@ The Edinburgh Geoparser, or EG for short, is free for research.
 
 *Let's take a break for questions before we get started with the tutorial.*
 
-## Tutorial
+## Edinburgh Geoparser Tutorial
 
 ### Setup
 #### Mac users
@@ -79,8 +79,10 @@ The Edinburgh Geoparser, or EG for short, is free for research.
 - `cd` to that folder in your shell
 - Run the following command to test: `cat 172172.txt | docker run -i -v $(pwd):/out kmcdono2/eg:latest ./run -t plain -g geonames -o /out 172172`
 
-### The Edinburgh geoparser
-#### Basic file structure
+(Alternate Windows solution: [MobaXterm](https://mobaxterm.mobatek.net/))
+
+
+### Basic file structure
 
 - README: run instructions
 - in: files you want to parse and geo-resolve
@@ -92,7 +94,7 @@ The Edinburgh Geoparser, or EG for short, is free for research.
 More on EG [file structure and pipeline](http://groups.inf.ed.ac.uk/geoparser/documentation/v1.1/html/overview.html).
 
 
-#### Considerations and Parameters
+### Considerations and Parameters
 
 EG combines all of the parsing and georesolution steps into one pipeline and produces a set of output files that include some basic map visualizations.
 
@@ -145,10 +147,13 @@ In this case, `-i` specifies input directory and `-o` the output directory.
 Let's run EG on
 
 #### Mac users
-``
+Be sure you've navigated to the scripts directory:
+`cd scripts`
+Then run the following (your output directory must already exist, e.g. `out`):
+`cat ../in/origin.txt | ./run -t plain -g unlock -o ../out origin`
 
 
-#### Evaluating your output
+### Evaluating your output
 
 Let's take a look at one of the out.xml files to see what is happening to the text.
 
@@ -164,7 +169,7 @@ Let's take a look at one of the out.xml files to see what is happening to the te
 "end word" [ew] both have word ids [e.g. w26]).
 
 
-#### Exporting your new metadata
+### Exporting your new metadata
 
 It is possible to export specific metadata fields (place name in text, gazetteer record ID, country of location, lat/long, feature type, etc.).
 
@@ -192,9 +197,32 @@ Check out the full [EG documentation](http://groups.inf.ed.ac.uk/geoparser/docum
 Now lets try using some texts that interest you.
 If you have plain text files in English, put them into the `in` directory. Use the same run scripts from above, but be sure to edit the in and out files or directories to match your new file names.
 
-If you don't have any plain text, try downloading something from these places:  
-- [Internet Archive](https://archive.org/)  
-- [Lakes District Corpus](https://github.com/UCREL/LakeDistrictCorpus)
+If you don't have any plain text, try downloading something from the [Internet Archive](https://archive.org/) or use one of the sample txts in the `in` directory.
+
+*What kinds of problems do you encounter?   
+Why do you think these problems occur?  
+How would you need to adapt the geoparser to solve these problems?*
+
+## Beyond EG
+
+EG is an excellent tool, with developers who are interested in creating version for specific research needs.
+
+However, there are lots of other fish in the GTA sea. If you want to try your hand at some other NLP packages that integrate Machine Learning into Named Entity Recognition, or have texts in non-English languages, for example, check out the following resources:
+
+#### For the text parsing processes:
+- [NLTK (python)](https://www.nltk.org/)
+- NLP for non-English languages in [R (udpipe)](https://www.r-bloggers.com/natural-language-processing-for-non-english-languages-with-udpipe/)
+- [SpaCy, also python](https://spacy.io/)
+
+
+#### Combined Parsing + Georesolution
+- [Mordecai](https://github.com/openeventdata/mordecai)
+- [Perdido, for French](http://erig.univ-pau.fr/PERDIDO/)
+
+*Interested in the challenge of evaluating different pipelines for your corpus?*
+There is a brand new article by [Milan Gritta et al](https://arxiv.org/abs/1810.12368) that can guide you through this process.
+
+
 
 ### Workshop Evaluation
 
