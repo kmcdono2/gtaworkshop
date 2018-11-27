@@ -89,27 +89,34 @@ The Edinburgh Geoparser, or EG for short, is free for research.
 - resolve: programs for geo-resolution
 - scripts: scripts to run EG
 
+More on EG [file structure and pipeline](http://groups.inf.ed.ac.uk/geoparser/documentation/v1.1/html/overview.html).
+
+
 #### Considerations and Parameters
 
 EG combines all of the parsing and georesolution steps into one pipeline and produces a set of output files that include some basic map visualizations.
 
-EG works well with plain text input.
+EG works well with plain text **input**. It can also accept google books files and XML, under certain conditions.
 `-t plain`
+`-t gb`
+`-t ltgxml`
 
-EG accesses a few commonly used gazetteers. You can also specify a local gazetteer (if you have one that is specific to your time/place).
+EG accesses a few commonly used **gazetteers**. You can also specify a local gazetteer (if you have one that is specific to your time/place).
 
 `-g geonames` Geonames
 `-g os`       UK Ordnance Survey
 `-g deep`     Historical placenames in England
 `-g plplus`   Pleiades+, ancient Greek and Roman world
 
-EG results include a range of files. Define the output directory and file name in the run command.
+EG results include a range of files. Define the **output** directory and file name in the run command.
 
 `-o /out 172172`
 
 `172172.out.xml` - XML file containing text and all word-level metadata produced during the process
 `172172.gaz.xml` - ranked list of geo-resolution candidates for each extracted place entity
 `172172.display.html` - visualization of geoparsed text, map, and list of geo-coordinates for each place
+
+There are other ways to limit your results:
 
 `-top` - this parameter creates `172172.display-top.html` that only maps top-ranked locations
 
@@ -126,12 +133,36 @@ o ../out 172172`
 
 (Score of `2` means that a gazetteer result within the bounding box or circle has 2x weight as a result that is outside that area.)
 
-Do you want to run multiple txt files through in one go? Download the `run-multiple-files.sh` script from this repo. Place it in the scripts directory. Run the following command to make it executable: `chmod u+x run-multiple-files.sh`
+Do you want to run **multiple files** through in one go? Download the `run-multiple-files.sh` script from this repo. Place it in the scripts directory. Run the following command to make it executable: `chmod u+x run-multiple-files.sh`
 
 Then, still from the scripts directory, run:
 `./run-multiple-files.sh -i ../in -o ../out`
 
 In this case, `-i` specifies input directory and `-o` the output directory.
+
+### Run EG
+
+Let's run EG on
+
+#### Mac users
+``
+
+
+#### Evaluating your output
+
+Let's take a look at one of the out.xml files to see what is happening to the text.
+
+`<text>`
+`<p>` Paragraphs
+`<s>` Sentences
+`<w>` Words
+
+`<standoff>`
+`<ents>` This element occurs twice because the NER process has two runs. 1) rule-based to identify and classify entities (`ner-rb`). EG entities can be classified as date, location, person, and organization. 2) verbs & verb phrases for detecting events. We are mostly interested in the first pass to identify and classify.
+
+`<part>` Links an entity element back to its position in the text ("start word" [sw] and
+"end word" [ew] both have word ids [e.g. w26]).
+
 
 #### Exporting your new metadata
 
@@ -152,6 +183,8 @@ Then: `./extract-to-tsv.sh < ../out/burtons.out.xml > ../out/burtons.out.tsv`
 
 You can edit the script (either in the command line or in the file) to include or exclude metadata fields. The script above, for ex., does not include @feat-type.
 
+Check out the full [EG documentation](http://groups.inf.ed.ac.uk/geoparser/documentation/v1.1/html/).
+
 *Questions?*
 
 ### New Inputs
@@ -159,5 +192,10 @@ You can edit the script (either in the command line or in the file) to include o
 Now lets try using some texts that interest you.
 If you have plain text files in English, put them into the `in` directory. Use the same run scripts from above, but be sure to edit the in and out files or directories to match your new file names.
 
-If you don't have any plain text, try downloading something from these places:
-[Internet Archive](https://archive.org/)
+If you don't have any plain text, try downloading something from these places:  
+- [Internet Archive](https://archive.org/)  
+- [Lakes District Corpus](https://github.com/UCREL/LakeDistrictCorpus)
+
+### Workshop Evaluation
+
+Before you leave, please take a moment to fill out this [quick evaluation form](https://stanforduniversity.qualtrics.com/jfe/form/SV_blp4YwVZW0D4dSt). It will help us adapt content for the future!
