@@ -77,7 +77,8 @@ The Edinburgh Geoparser, or EG for short, is free for research.
 - We will be using a Docker container of the [Edinburgh Geoparser](https://hub.docker.com/r/kmcdono2/eg/)
 - Download the `172172.txt` file from this Github repo and put it in a local folder
 - `cd` to that folder in your shell
-- Run the following command to test: `cat 172172.txt | docker run -i -v $(pwd):/out kmcdono2/eg:latest ./run -t plain -g geonames -o /out 172172`
+*I am aware that the following command doesn't work. In the process of adapting to Windows*
+- Run the following command to test: `cat 172172.txt | docker run -i -v cd:/out kmcdono2/eg:latest ./run -t plain -g geonames -o /out 172172`
 
 (Alternate Windows solution: [MobaXterm](https://mobaxterm.mobatek.net/))
 
@@ -155,7 +156,7 @@ Then run the following (your output directory must already exist, e.g. `out`):
 
 #### Windows users
 Run:
-`cat origin.txt | docker run -i -v $(pwd):/out kmcdono2/eg:latest ./run -t plain -g geonames -o /out origin`
+`cat origin.txt | docker run -i -v cd:/out kmcdono2/eg:latest ./run -t plain -g geonames -o /out origin`
 
 
 ### Evaluating your output
