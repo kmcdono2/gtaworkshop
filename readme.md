@@ -21,7 +21,6 @@
 
 
 ### GTA
-#### What is it?
 GTA helps us answer questions like:
 
 - Where is [a corpus] talking about?
