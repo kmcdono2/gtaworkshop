@@ -9,14 +9,14 @@
 
 ### The Basics
 
-Natural Language - human generated language vs. formal computing languages (or just tabular data)
-Natural Language Processing - research field encompassing linguistics, computer science, artificial intelligence that works to allow machines to process natural language
-Rule-based vs. statistical NLP - writing rules vs. using machine learning algorithms to analyze a corpus
-Corpus - set of texts (hand keyed, OCR'd, born digital)
-Corpus linguistics -
-Geographic information science -
-Gazetteer -
-Lexicon -
+- Natural Language - human generated language vs. formal computing languages (or just tabular data)
+- Natural Language Processing - research field encompassing linguistics, computer science, artificial intelligence that works to allow machines to process natural language
+- Rule-based vs. statistical NLP - writing rules vs. using machine learning algorithms to analyze a corpus
+- Corpus - set of texts (hand keyed, OCR'd, born digital)
+- Corpus linguistics
+- Geographic information science
+- Gazetteer
+- Lexicon
 
 
 
@@ -66,6 +66,7 @@ The Edinburgh Geoparser, or EG for short, is free for research.
 - Open your terminal
 - `cd` to your EG folder
 - List EG folder contents `ls ./geoparser-v1.1`
+- `cd` to the scripts folder
 - test that EG functions with this command using a sample input file provided with the program `cat ../in/172172.txt | ./run -t plain -g geonames -o ../out 172172`
 
 
@@ -144,12 +145,12 @@ In this case, `-i` specifies input directory and `-o` the output directory.
 
 ### Run EG
 
-Let's run EG on Darwin's *The Origin of Species*
+Let's run EG on Darwin's *The Origin of Species*  
 Download the `origins.txt` file from the repo and put it in your `in` directory.
 
 #### Mac users
 Be sure you've navigated to the scripts directory:
-`cd scripts`
+`cd scripts`  
 Then run the following (your output directory must already exist, e.g. `out`):
 `cat ../in/origin.txt | ./run -t plain -g geonames -o ../out origin`
 
@@ -162,13 +163,14 @@ Run:
 
 Let's take a look at one of the out.xml files to see what is happening to the text.
 
-`<text>`
-`<p>` Paragraphs
-`<s>` Sentences
-`<w>` Words
+`<text>`  
+`<p>` Paragraphs  
+`<s>` Sentences  
+`<w>` Words  
 
-`<standoff>`
-`<ents>` This element occurs twice because the NER process has two runs. 1) rule-based to identify and classify entities (`ner-rb`). EG entities can be classified as date, location, person, and organization. 2) verbs & verb phrases for detecting events. We are mostly interested in the first pass to identify and classify.
+`<standoff>`  
+
+`<ents>` This element occurs twice because the NER process has two runs. 1) rule-based to identify and classify entities (`ner-rb`). EG entities can be classified as date, location, person, and organization. 2) verbs & verb phrases for detecting events. We are mostly interested in the first pass to identify and classify.  
 
 `<part>` Links an entity element back to its position in the text ("start word" [sw] and
 "end word" [ew] both have word ids [e.g. w26]).
